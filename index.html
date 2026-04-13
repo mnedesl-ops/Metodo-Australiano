@@ -26,9 +26,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --navy-dark: #0f172a; /* Slate 900 mais moderno e profundo */
+            --navy-dark: #0f172a;
+            /* Slate 900 mais moderno e profundo */
             --navy-light: #1e293b;
-            --red-dark: #ef4444; /* Vermelho vivo para máxima conversão no botão */
+            --red-dark: #ef4444;
+            /* Vermelho vivo para máxima conversão no botão */
             --red-hover: #dc2626;
         }
 
@@ -49,7 +51,7 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 1rem;
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
 
         .btn-red {
@@ -57,8 +59,9 @@
             color: white;
             font-weight: 700;
             transition: all 0.3s ease;
-            min-height: 60px; /* Garante área de toque (touch target) ideal no celular */
-            border: 1px solid rgba(255,255,255,0.1);
+            min-height: 60px;
+            /* Garante área de toque (touch target) ideal no celular */
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn-red:hover:not(:disabled) {
@@ -236,10 +239,10 @@
                 <div id="testimonials" class="my-8 space-y-6">
                     <h3 class="text-2xl font-bold text-red-500 mb-6 text-center">Relatos de quem já está no Método:</h3>
 
-                <!-- Depoimento 1: Estilo Informal/Empolgado -->
-                <div class="card p-6 rounded-2xl text-left shadow-lg">
-                    <div class="flex items-center text-yellow-400 mb-4 gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    <!-- Depoimento 1: Estilo Informal/Empolgado -->
+                    <div class="card p-6 rounded-2xl text-left shadow-lg">
+                        <div class="flex items-center text-yellow-400 mb-4 gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
                                     d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -272,12 +275,12 @@
                             Recomendo muito pra quem tá cansado de perder tempo!"
                         </p>
                         <p class="font-bold text-red-400 text-right text-xs">— Luciana Mendes, Campinas SP</p>
-                </div>
+                    </div>
 
-                <!-- Depoimento 2: Estilo Resumido/Entrevista de Emprego -->
-                <div class="card p-6 rounded-2xl text-left shadow-lg">
-                    <div class="flex items-center text-yellow-400 mb-4 gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    <!-- Depoimento 2: Estilo Resumido/Entrevista de Emprego -->
+                    <div class="card p-6 rounded-2xl text-left shadow-lg">
+                        <div class="flex items-center text-yellow-400 mb-4 gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
                                     d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -309,12 +312,12 @@
                             técnicas aqui e o entrevistador até me elogiou. Consegui a vaga!"
                         </p>
                         <p class="font-bold text-red-400 text-right text-xs">— Carlos Alberto, Salvador BA</p>
-                </div>
+                    </div>
 
-                <!-- Depoimento 3: Estilo Detalhado/Aliviado -->
-                <div class="card p-6 rounded-2xl text-left shadow-lg">
-                    <div class="flex items-center text-yellow-400 mb-4 gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    <!-- Depoimento 3: Estilo Detalhado/Aliviado -->
+                    <div class="card p-6 rounded-2xl text-left shadow-lg">
+                        <div class="flex items-center text-yellow-400 mb-4 gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
                                     d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -427,42 +430,42 @@
             // --- SEQUÊNCIA DE NOTIFICAÇÕES ---
 
             // 1ª Notificação: Após 5 segundos
-        setTimeout(() => {
-            notifEmoji.textContent = "🔥";
-            notifText.innerHTML = "<strong>47 alunos</strong> entraram para o Método essa semana!";
-            notification.classList.remove('-translate-y-[150%]');
-
-            // Esconder após 6 segundos
             setTimeout(() => {
-                notification.classList.add('-translate-y-[150%]');
+                notifEmoji.textContent = "🔥";
+                notifText.innerHTML = "<strong>47 alunos</strong> entraram para o Método essa semana!";
+                notification.classList.remove('-translate-y-[150%]');
 
-                // 2ª Notificação: Após 7 segundos do fecho da primeira
+                // Esconder após 6 segundos
                 setTimeout(() => {
-                    prepararNotificacaoAleatoria();
-                    notification.classList.remove('-translate-y-[150%]');
+                    notification.classList.add('-translate-y-[150%]');
 
-                    // Esconder após 6 segundos
+                    // 2ª Notificação: Após 7 segundos do fecho da primeira
                     setTimeout(() => {
-                        notification.classList.add('-translate-y-[150%]');
-                    }, 6000);
+                        prepararNotificacaoAleatoria();
+                        notification.classList.remove('-translate-y-[150%]');
 
-                }, 7000);
+                        // Esconder após 6 segundos
+                        setTimeout(() => {
+                            notification.classList.add('-translate-y-[150%]');
+                        }, 6000);
 
-            }, 6000);
+                    }, 7000);
 
-        }, 4000);
-    }
+                }, 6000);
 
-    function prepararNotificacaoAleatoria() {
-        const nome = nomes[Math.floor(Math.random() * nomes.length)];
-        const estado = estadoUsuario || todosEstados[Math.floor(Math.random() * todosEstados.length)];
-        // Minutos variando entre 16 e 28
-        const minutos = Math.floor(Math.random() * (28 - 16 + 1)) + 16;
-        notifEmoji.textContent = "✅";
-        notifText.innerHTML = `<strong>${nome}</strong> de ${estado} garantiu o acesso há ${minutos} min!`;
-    }
+            }, 4000);
+        }
 
-    function startTimer(duration) {
+        function prepararNotificacaoAleatoria() {
+            const nome = nomes[Math.floor(Math.random() * nomes.length)];
+            const estado = estadoUsuario || todosEstados[Math.floor(Math.random() * todosEstados.length)];
+            // Minutos variando entre 16 e 28
+            const minutos = Math.floor(Math.random() * (28 - 16 + 1)) + 16;
+            notifEmoji.textContent = "✅";
+            notifText.innerHTML = `<strong>${nome}</strong> de ${estado} garantiu o acesso há ${minutos} min!`;
+        }
+
+        function startTimer(duration) {
             let timer = duration;
             const interval = setInterval(() => {
                 if (timer < 0) {
