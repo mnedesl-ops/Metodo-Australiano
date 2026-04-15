@@ -9,7 +9,6 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "u2h3wy28qz");
     </script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCF4GHJ7BM"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,406 +21,528 @@
     <title>Método Australiano - Acesso Exclusivo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --navy-dark: #0f172a;
-            /* Slate 900 mais moderno e profundo */
-            --navy-light: #1e293b;
-            --red-dark: #ef4444;
-            /* Vermelho vivo para máxima conversão no botão */
-            --red-hover: #dc2626;
+            --navy-dark: #060d1f;
+            --navy-mid: #0d1a35;
+            --navy-light: #162040;
+            --red-dark: #e63946;
+            --red-glow: rgba(230, 57, 70, 0.4);
+            --gold: #f4c542;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--navy-dark);
-            background-image: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
-            color: #f8fafc;
+            background-image:
+                radial-gradient(ellipse at 20% 20%, rgba(230, 57, 70, 0.07) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.07) 0%, transparent 50%),
+                radial-gradient(ellipse at top, #0d1a35 0%, #060d1f 100%);
+            color: #f1f5f9;
             min-height: 100vh;
         }
 
-        .main-container {
-            background-color: transparent;
+        /* ── Hero ── */
+        .hero {
+            text-align: center;
+            padding: 40px 16px 24px;
         }
 
-        .card {
-            background-color: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .hero h1 {
+            font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #e63946, #f87171);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Main Card ── */
+        .main-card {
+            background: linear-gradient(145deg, rgba(22, 32, 64, 0.9), rgba(13, 26, 53, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 1.25rem;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.03),
+                0 25px 60px -15px rgba(0, 0, 0, 0.7),
+                0 0 80px -20px rgba(230, 57, 70, 0.1);
+            overflow: hidden;
+        }
+
+        /* ── Video ── */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-border {
+            border: 2px solid rgba(230, 57, 70, 0.3);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 0 40px -10px rgba(230, 57, 70, 0.25);
+        }
+
+        /* ── Price ── */
+        .price-box {
+            background: linear-gradient(135deg, rgba(22, 32, 64, 0.8), rgba(13, 26, 53, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 1rem;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            padding: 24px;
+            text-align: center;
         }
 
-        .btn-red {
-            background: linear-gradient(135deg, var(--red-dark) 0%, #b91c1c 100%);
-            color: white;
-            font-weight: 700;
+        /* ── CTA Button ── */
+        .btn-cta {
+            background: linear-gradient(135deg, #e63946 0%, #b91c1c 100%);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.875rem;
+            padding: 18px 24px;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             transition: all 0.3s ease;
-            min-height: 60px;
-            /* Garante área de toque (touch target) ideal no celular */
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 24px -4px rgba(230, 57, 70, 0.5);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-red:hover:not(:disabled) {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5);
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+            transition: left 0.5s ease;
         }
 
-        .btn-red:disabled {
-            background-color: #333;
-            border-color: #444;
-            color: #777;
-            cursor: not-allowed;
-            opacity: 0.6;
+        .btn-cta:hover::before {
+            left: 100%;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(127, 0, 0, 0.7);
-            }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px -6px rgba(230, 57, 70, 0.6);
+        }
 
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(127, 0, 0, 0);
-            }
+        @keyframes pulse-btn {
 
+            0%,
             100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(127, 0, 0, 0);
+                box-shadow: 0 8px 24px -4px rgba(230, 57, 70, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 8px 40px 0px rgba(230, 57, 70, 0.75);
             }
         }
 
         .btn-pulse {
-            animation: pulse 2s infinite;
+            animation: pulse-btn 2.2s ease-in-out infinite;
         }
 
-        .content-card {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-top: 4px solid var(--red-dark);
+        /* ── Testimonials ── */
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(22, 32, 64, 0.7), rgba(13, 26, 53, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-left: 3px solid var(--red-dark);
             border-radius: 1rem;
+            padding: 22px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+            border-left-color: #f87171;
+        }
+
+        .stars {
+            color: var(--gold);
+            display: flex;
+            gap: 3px;
+            margin-bottom: 12px;
+        }
+
+        /* ── Trust badges ── */
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: #cbd5e1;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            margin: 8px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* ── Notification Toast ── */
+        #top-notification {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(16px);
+        }
+
+        /* ── Guarantee ── */
+        .guarantee-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(5, 150, 105, 0.04));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 1rem;
+            padding: 20px;
+        }
+
+        /* ── Text colors improved ── */
+        .text-muted {
+            color: #cbd5e1 !important;
+        }
+
+        .text-subtle {
+            color: #94a3b8 !important;
         }
     </style>
 </head>
 
-<body class="flex flex-col items-center justify-start p-4 md:p-6 antialiased">
+<body class="antialiased">
 
-    <!-- Notificação Estilo Toast (Mobile-Friendly e não intrusiva) -->
+    <!-- Toast Notification -->
     <div id="top-notification"
-        class="fixed top-4 left-0 right-0 mx-auto w-[90%] max-w-sm bg-white/95 backdrop-blur-md text-slate-900 py-3 px-4 rounded-2xl shadow-2xl flex items-center justify-start gap-3 border border-slate-200 transform -translate-y-[150%] transition-transform duration-500 ease-out z-50">
-        <div class="bg-red-100 w-10 h-10 rounded-full flex items-center justify-center shrink-0">
-            <span id="notif-emoji" class="text-xl leading-none">🚀</span>
+        class="fixed top-4 left-0 right-0 mx-auto w-[92%] max-w-sm text-slate-900 py-3 px-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-100 transform -translate-y-[150%] transition-transform duration-500 ease-out z-50">
+        <div class="bg-red-100 w-10 h-10 rounded-full flex items-center justify-center shrink-0 shadow-sm">
+            <span id="notif-emoji" class="text-lg leading-none">🚀</span>
         </div>
-        <span id="notif-text" class="text-sm font-medium leading-tight">Carregando informações...</span>
+        <div>
+            <span id="notif-text" class="text-sm font-semibold leading-tight block">Carregando...</span>
+            <span class="text-xs text-slate-400">Método Australiano</span>
+        </div>
     </div>
 
-    <div id="funnel-container" class="w-full mx-auto pb-12">
+    <!-- Main Content -->
+    <div class="w-full max-w-2xl mx-auto px-4 pb-16">
 
-        <!-- Secção de Conteúdo -->
-        <div id="page-content" class="text-center w-full max-w-2xl mx-auto mt-4 md:mt-8">
-            <div class="content-card shadow-2xl p-5 md:p-8 rounded-xl text-left mb-8">
-                <!-- Headline ajustada: text-xl no mobile, text-3xl no desktop -->
-                <h2 class="text-xl md:text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                        stroke="#7f0000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                    </svg>
-                    O que você recebe no Método Australiano
+        <!-- Hero -->
+        <div class="hero">
+            <h1>Inglês fluente em 8 semanas</h1>
+            <p class="text-muted">O método mais eficiente para se tornar fluente em tempo recorde!</p>
+        </div>
+
+        <!-- Main Card -->
+        <div class="main-card">
+
+            <!-- Video Section -->
+            <div class="px-5 pt-5 pb-0 md:px-8 md:pt-8 md:pb-2">
+                <h2 class="text-center text-xl md:text-2xl font-bold text-white mb-5">
+                    Veja a plataforma do curso por dentro
                 </h2>
-
-                <!-- Nomes dos conteúdos ajustados: text-base no mobile, text-lg no desktop -->
-                <ul class="grid grid-cols-1 gap-4 md:gap-5">
-                    <li class="flex items-center gap-3">
-                        <div class="bg-red-900/50 p-1 rounded-full text-red-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg">Curso de Fluência em 8 Semanas</p>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="bg-red-900/50 p-1 rounded-full text-red-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg">Curso Inglês para Viagens</p>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="bg-red-900/50 p-1 rounded-full text-red-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg">Curso:Como Perder o Medo de Falar Inglês</p>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="bg-red-900/50 p-1 rounded-full text-red-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg">Curso: Inglês Com Séries</p>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="bg-red-900/50 p-1 rounded-full text-red-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg">Curso: Diálogos da Fluência</p>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="bg-red-900/50 p-1 rounded-full text-red-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg">Curso de Memorização de Idiomas</p>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="bg-red-900/50 p-1 rounded-full text-red-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg">Livro Digital Revolucionando o Aprendizado</p>
-                    </li>
-                    <li class="flex items-center gap-3 mt-2">
-                        <div class="bg-yellow-900/50 p-1 rounded-full text-yellow-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg text-yellow-400">Bônus: As 2000 palavras Mais Usadas no
-                            Inglês</p>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="bg-yellow-900/50 p-1 rounded-full text-yellow-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-base md:text-lg text-yellow-400">Bônus: As 100 Frases Mais Usadas No
-                            Inglês</p>
-                    </li>
-                </ul>
+                <div class="video-border">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/99nrrpkOjk4?rel=0&modestbranding=1"
+                            title="Método Australiano"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </div>
 
-            <div id="offer-container" class="mt-8">
-                <div id="offer-timer-wrapper">
-                    <p class="font-semibold mb-2 text-red-500 uppercase tracking-widest text-sm">A sua vaga com desconto
-                        expira em:</p>
-                    <div id="offer-timer"
-                        class="text-3xl font-bold bg-white/10 text-white border border-red-900 rounded-lg py-2 w-40 mx-auto mb-6">
-                        04:00</div>
+
+
+            <!-- Price + CTA -->
+            <div class="px-5 pb-5 pt-2 md:px-8 md:pb-8 md:pt-4 space-y-5">
+
+                <!-- Price Box -->
+                <div class="price-box">
+                    <div class="flex items-center justify-center gap-4 flex-wrap">
+                        <div class="text-center">
+                            <p class="text-slate-400 text-sm mb-1">De</p>
+                            <p class="line-through text-slate-400 text-2xl font-bold">R$297,00</p>
+                        </div>
+                        <div class="text-4xl text-slate-400">→</div>
+                        <div class="text-center">
+                            <p class="text-green-400 text-sm mb-1 font-semibold">Por apenas</p>
+                            <p class="text-white font-black text-4xl md:text-5xl">R$197<span class="text-2xl">,00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-muted text-sm mt-3">Você economiza <strong class="text-green-400">R$100,00</strong>
+                        hoje</p>
                 </div>
 
-                <!-- Preço Superior -->
-                <div class="mb-6">
-                    <p class="text-red-500 font-bold text-lg md:text-xl">✨ Ganhou um Cupom Especial! ✨</p>
-                    <p class="text-gray-300 text-xl">De <span class="line-through text-red-900">R$197,00</span> por
-                        apenas <span class="text-white font-extrabold text-3xl md:text-4xl">R$97,00</span></p>
-                </div>
-
-                <button id="cta-button-1"
-                    class="btn-red w-full py-4 rounded-lg text-xl flex items-center justify-center gap-3 btn-pulse">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <!-- CTA 1 -->
+                <button id="cta-button-1" class="btn-cta btn-pulse text-base md:text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="16" r="1" />
                         <rect x="3" y="10" width="18" height="12" rx="2" />
                         <path d="M7 10V7a5 5 0 0 1 9.33-2.5" />
                     </svg>
-                    Eu Quero o Meu Acesso ao Método Australiano!
+                    Quero comprar o Método Australiano + Bônus
                 </button>
 
-                <div class="flex items-center justify-center gap-2 mt-3 mb-8 text-gray-500 text-xs md:text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-                        <path d="m9 12 2 2 4-4" />
-                    </svg>
-                    <span>Pagamento Seguro processado por <strong>WIAPY</strong></span>
-                </div>
-
-                <!-- Depoimentos -->
-                <div id="testimonials" class="my-8 space-y-6">
-                    <h3 class="text-2xl font-bold text-red-500 mb-6 text-center">Relatos de quem já está no Método:</h3>
-
-                    <!-- Depoimento 1: Estilo Informal/Empolgado -->
-                    <div class="card p-6 rounded-2xl text-left shadow-lg">
-                        <div class="flex items-center text-yellow-400 mb-4 gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                <!-- Trust Row -->
+                <div class="flex items-center justify-center gap-6 pt-1">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#cbd5e1"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                                <path d="m9 12 2 2 4-4" />
                             </svg>
                         </div>
-                        <p class="text-gray-200 text-sm italic leading-relaxed mb-3">
-                            "Gente, eu já gastei uma nota em curso de inglês de franquia famosa e nunca saia do 'the
-                            book is on the table'. O Método Australiano é bizarro de bom porque foca no que a gente fala
-                            de verdade. O cronograma de 8 semanas me ajudou a criar o hábito que eu nunca tive.
-                            Recomendo muito pra quem tá cansado de perder tempo!"
-                        </p>
-                        <p class="font-bold text-red-400 text-right text-xs">— Luciana Mendes, Campinas SP</p>
+                        Compra Segura
                     </div>
-
-                    <!-- Depoimento 2: Estilo Resumido/Entrevista de Emprego -->
-                    <div class="card p-6 rounded-2xl text-left shadow-lg">
-                        <div class="flex items-center text-yellow-400 mb-4 gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#cbd5e1"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                                <line x1="1" y1="10" x2="23" y2="10" />
                             </svg>
                         </div>
-                        <p class="text-gray-200 text-sm leading-relaxed mb-3">
-                            "Apareceu uma vaga em uma multinacional e eu ia desistir por causa da entrevista em inglês.
-                            Se não fosse o Método Australiano, eu nunca aprenderia o necessário a tempo. Estudei as
-                            técnicas aqui e o entrevistador até me elogiou. Consegui a vaga!"
-                        </p>
-                        <p class="font-bold text-red-400 text-right text-xs">— Carlos Alberto, Salvador BA</p>
+                        Pix & Cartão
                     </div>
-
-                    <!-- Depoimento 3: Estilo Detalhado/Aliviado -->
-                    <div class="card p-6 rounded-2xl text-left shadow-lg">
-                        <div class="flex items-center text-yellow-400 mb-4 gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#cbd5e1"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
                             </svg>
                         </div>
-                        <p class="text-gray-200 text-sm leading-relaxed mb-3">
-                            "Comprei na correria porque tenho uma viagem marcada e tava morrendo de medo de não
-                            conseguir pedir nem um café. O Método Australiano pra viagens salvou minha vida! As frases
-                            são exatamente o que a gente usa no dia a dia. Já me sinto muito mais segura pra encarar o
-                            aeroporto. Melhor investimento que fiz esse ano!"
-                        </p>
-                        <p class="font-bold text-red-400 text-right text-xs">— Patrícia Rocha, Curitiba PR</p>
+                        Acesso Imediato
                     </div>
                 </div>
 
-                <!-- Preço Inferior -->
-                <div class="mt-8 mb-6">
-                    <p class="text-red-500 font-bold text-lg md:text-xl">✨ Ganhou um Cupom Especial! ✨</p>
-                    <p class="text-gray-300 text-xl">De <span class="line-through text-red-900">R$197,00</span> por
-                        apenas <span class="text-white font-extrabold text-3xl md:text-4xl">R$97,00</span></p>
+                <p class="text-center text-muted text-xs">
+                    Pagamento processado com segurança por <strong class="text-white">WIAPY</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee-box mt-6 flex items-start gap-4">
+            <div class="shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="#10b981"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+            </div>
+            <div>
+                <p class="font-bold text-emerald-400 text-base mb-1">Garantia de 7 dias</p>
+                <p class="text-slate-300 text-sm leading-relaxed">Se por qualquer motivo você não ficar satisfeito,
+                    devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="mt-12 mb-8">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                    O que nossos <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">alunos
+                        dizem</span>
+                </h3>
+                <p class="text-slate-400 text-sm max-w-md mx-auto">Arraste para baixo para ver mensagens reais de alunos
+                    que transformaram suas vidas com o método.</p>
+            </div>
+
+            <!-- Testimonial Images Stack -->
+            <div class="flex flex-col items-center gap-8 max-w-sm mx-auto">
+
+                <!-- Testimonial Image 1 -->
+                <div class="w-full">
+                    <p class="text-white font-semibold text-center mb-2 flex items-center justify-center gap-1.5">
+                        <span>Lucas Martins</span>
+                        <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </p>
+                    <div
+                        class="rounded-xl overflow-hidden shadow-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-[0_15px_40px_-10px_rgba(230,57,70,0.4)]">
+                        <img src="https://i.postimg.cc/7Zc3B2Ff/img1.jpg" alt="Depoimento de Lucas"
+                            class="w-full h-auto block" loading="lazy">
+                    </div>
                 </div>
 
-                <button id="cta-button-2"
-                    class="btn-red w-full py-4 rounded-lg text-xl flex items-center justify-center gap-3 btn-pulse mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="16" r="1" />
-                        <rect x="3" y="10" width="18" height="12" rx="2" />
-                        <path d="M7 10V7a5 5 0 0 1 9.33-2.5" />
-                    </svg>
-                    Eu Quero o Meu Acesso ao Método Australiano!
-                </button>
+                <!-- Testimonial Image 2 -->
+                <div class="w-full">
+                    <p class="text-white font-semibold text-center mb-2 flex items-center justify-center gap-1.5">
+                        <span>Thiago Costa</span>
+                        <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </p>
+                    <div
+                        class="rounded-xl overflow-hidden shadow-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-[0_15px_40px_-10px_rgba(230,57,70,0.4)]">
+                        <img src="https://i.postimg.cc/FsC3RSsq/img2.jpg" alt="Depoimento de Thiago"
+                            class="w-full h-auto block" loading="lazy">
+                    </div>
+                </div>
 
-                <div class="flex items-center justify-center gap-2 mt-2 mb-12 text-gray-500 text-xs md:text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-                        <path d="m9 12 2 2 4-4" />
-                    </svg>
-                    <span>Pagamento Seguro processado por <strong>WIAPY</strong></span>
+                <!-- Testimonial Image 3 -->
+                <div class="w-full">
+                    <p class="text-white font-semibold text-center mb-2 flex items-center justify-center gap-1.5">
+                        <span>Rafael Silva</span>
+                        <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </p>
+                    <div
+                        class="rounded-xl overflow-hidden shadow-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-[0_15px_40px_-10px_rgba(230,57,70,0.4)]">
+                        <img src="https://i.postimg.cc/NMtrV7p5/img3.jpg" alt="Depoimento de Rafael"
+                            class="w-full h-auto block" loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="mt-10 space-y-4">
+            <div class="main-card">
+                <div class="p-6 md:p-8 text-center space-y-5">
+                    <p class="text-slate-300 text-lg">
+                        De <span class="line-through text-slate-500">R$297,00</span> por apenas
+                    </p>
+                    <p class="text-white font-black text-5xl md:text-6xl">R$197<span class="text-3xl">,00</span></p>
+
+                    <button id="cta-button-2" class="btn-cta btn-pulse text-base md:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="16" r="1" />
+                            <rect x="3" y="10" width="18" height="12" rx="2" />
+                            <path d="M7 10V7a5 5 0 0 1 9.33-2.5" />
+                        </svg>
+                        Quero comprar o Método Australiano + Bônus
+                    </button>
+
+                    <div class="flex items-center justify-center gap-6">
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                    stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                                    <path d="m9 12 2 2 4-4" />
+                                </svg>
+                            </div>
+                            Seguro
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                    stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                                    <line x1="1" y1="10" x2="23" y2="10" />
+                                </svg>
+                            </div>
+                            Pix & Cartão
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                    stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                            </div>
+                            Imediato
+                        </div>
+                    </div>
+
+                    <p class="text-muted text-xs">
+                        Pagamento 100% seguro processado por <strong class="text-white">WIAPY</strong>
+                    </p>
                 </div>
             </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-10 text-center text-slate-500 text-xs space-y-1">
+            <p>© 2024 Método Australiano. Todos os direitos reservados.</p>
+            <p>Este produto é distribuído digitalmente pela plataforma WIAPY.</p>
         </div>
 
     </div>
 
     <script>
-        // --- Configurações ---
         const checkoutLink = "https://pay.wiapy.com/wzcq6MNBWO";
         const offerTimerDuration = 240;
 
-        // --- Dados para Notificações ---
         const nomes = [
             "Alessandra Duarte", "Marcos Silva", "Juliana Costa", "Roberto Oliveira", "Patrícia Lima",
             "Felipe Santos", "Beatriz Souza", "Ricardo Ferreira", "Camila Alves", "André Ribeiro",
@@ -433,7 +554,6 @@
 
         let estadoUsuario = null;
 
-        const timerEl = document.getElementById('offer-timer');
         const notification = document.getElementById('top-notification');
         const notifText = document.getElementById('notif-text');
         const notifEmoji = document.getElementById('notif-emoji');
@@ -447,69 +567,39 @@
                         estadoUsuario = data.regionCode;
                     }
                 }
-            } catch (err) { /* Falha silenciosa */ }
+            } catch (err) { }
         }
 
         function initializePage() {
             detectarLocalizacao();
-            startTimer(offerTimerDuration);
 
-            // Handler de Cliques
             const ctaHandler = () => window.location.href = checkoutLink;
             document.getElementById('cta-button-1').onclick = ctaHandler;
             document.getElementById('cta-button-2').onclick = ctaHandler;
 
-            // --- SEQUÊNCIA DE NOTIFICAÇÕES ---
-
-            // 1ª Notificação: Após 5 segundos
             setTimeout(() => {
                 notifEmoji.textContent = "🔥";
                 notifText.innerHTML = "<strong>47 alunos</strong> entraram para o Método essa semana!";
                 notification.classList.remove('-translate-y-[150%]');
-
-                // Esconder após 6 segundos
                 setTimeout(() => {
                     notification.classList.add('-translate-y-[150%]');
-
-                    // 2ª Notificação: Após 7 segundos do fecho da primeira
                     setTimeout(() => {
                         prepararNotificacaoAleatoria();
                         notification.classList.remove('-translate-y-[150%]');
-
-                        // Esconder após 6 segundos
                         setTimeout(() => {
                             notification.classList.add('-translate-y-[150%]');
                         }, 6000);
-
                     }, 7000);
-
                 }, 6000);
-
             }, 4000);
         }
 
         function prepararNotificacaoAleatoria() {
             const nome = nomes[Math.floor(Math.random() * nomes.length)];
             const estado = estadoUsuario || todosEstados[Math.floor(Math.random() * todosEstados.length)];
-            // Minutos variando entre 16 e 28
             const minutos = Math.floor(Math.random() * (28 - 16 + 1)) + 16;
             notifEmoji.textContent = "✅";
             notifText.innerHTML = `<strong>${nome}</strong> de ${estado} garantiu o acesso há ${minutos} min!`;
-        }
-
-        function startTimer(duration) {
-            let timer = duration;
-            const interval = setInterval(() => {
-                if (timer < 0) {
-                    clearInterval(interval);
-                    document.getElementById('offer-timer-wrapper').style.display = 'none';
-                    return;
-                }
-                const min = String(Math.floor(timer / 60)).padStart(2, '0');
-                const sec = String(timer % 60).padStart(2, '0');
-                timerEl.textContent = `${min}:${sec}`;
-                timer--;
-            }, 1000);
         }
 
         document.addEventListener('DOMContentLoaded', initializePage);
